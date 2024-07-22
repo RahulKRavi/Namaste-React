@@ -7,19 +7,13 @@ const heading1 = React.createElement(
     "Heading 1"
 );
 
-const heading2 = React.createElement(
-    "h2",
-    {},
-    "Heading 2"
-);
+const heading2 = <h2>Heading 2</h2>
 
-const div = React.createElement(
-    "div",
-    {
-        id: "container"
-    },
-    [heading1,heading2]
-);
+const DivComponent = () => {
+    return (
+        <div>{heading1},{heading2}</div>
+    )
+}
 
 const root = ReactDom.createRoot(document.getElementById('main'));
-root.render(div)
+root.render(<DivComponent/>)
