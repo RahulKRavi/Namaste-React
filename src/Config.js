@@ -1,23 +1,4 @@
-import React from 'react';
-import ReactDom from 'react-dom/client'
-
-const Header = () => {
-    return (
-        <div className="header">
-            <img className="logo" alt="Logo of eatnow" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/EatNow_logo.png"></img>
-            <form className="search-form">
-                <input type="text" className="search-input" placeholder="Search..."></input>
-                <input type="button" className="search-button" value="Search"></input>
-            </form>
-            <ul className="navbar-list">
-                <li className="navbar-items">Home</li>
-                <li className="navbar-items">Account</li>
-                <li className="navbar-items">Cart</li>
-            </ul>
-        </div>
-    )
-}
-const restaurantData = [ 
+export const restaurantData = [ 
     {
       "info": {
         "id": "704921",
@@ -890,47 +871,3 @@ const restaurantData = [
     }
   ]
 
-
-const Restaurant = ({name,cuisines,avgRatingString,cloudinaryImageId}) => {
-    return (
-        <div className="card">
-            <img className="card-img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId} alt="Avatar"></img>
-            <div className="container">
-                <h4><b>{name}</b></h4>
-                <p>{cuisines.join(",")}</p>
-                <p>{avgRatingString +" Stars"}</p>
-            </div>
-        </div>
-    );
-}
-
-const Body = () => {
-    return (
-        <div className="body">
-          {restaurantData.map((restaurant)=>{
-              return <Restaurant {...restaurant.info}/>
-          })}
-        </div>
-    );
-}
-
-const Footer = () => {
-    return (
-        <div className="footer">
-            Nothing Just Some Blank Spcae For Footer
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <>
-            <Header />
-            <Body />
-            <Footer />
-        </>
-    )
-}
-
-const root = ReactDom.createRoot(document.getElementById('main'));
-root.render(<AppLayout/>)
