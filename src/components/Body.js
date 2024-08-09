@@ -1,5 +1,6 @@
-import Restaurant from "./Restaurant";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Restaurant from "./Restaurant";
 import Shimmer from "./Shimmer";
 
 function filterData(searchText, restaurants){
@@ -29,7 +30,7 @@ const Body = () => {
     }
 
 
-    return filterdRestaurants.length===0?(<Shimmer />):(
+    return filterdRestaurants.length===0 ? (<Shimmer />):(
         <>
             <div className="searchContainer">
                 <input type="text" className="search-input" value={searchText} onChange={(e) => { setSearchText(e.target.value) }}></input>
@@ -43,7 +44,9 @@ const Body = () => {
             <div className="body">
                 {filterdRestaurants.map((restaurant) => {
                     return (
-                    <Restaurant {...restaurant.info} key={restaurant.info.id}/>
+                        <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id}>
+                            <Restaurant {...restaurant.info} />
+                        </Link>
                     )
                 })}
             </div>
