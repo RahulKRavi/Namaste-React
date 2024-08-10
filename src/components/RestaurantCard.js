@@ -1,6 +1,6 @@
 import { IMG_CDN_URL } from "../Config";
 
-const Restaurant = ({name,cuisines,avgRatingString,cloudinaryImageId}) => {
+const RestaurantCard = ({name,cuisines,avgRatingString,cloudinaryImageId}) => {
     return (
         <div className="card">
             <img className="card-img" src={IMG_CDN_URL+cloudinaryImageId} alt="Avatar"></img>
@@ -13,4 +13,4 @@ const Restaurant = ({name,cuisines,avgRatingString,cloudinaryImageId}) => {
     );
 }
 
-export default Restaurant;
+export default RestaurantCard;
