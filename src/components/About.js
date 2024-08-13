@@ -5,9 +5,10 @@ const About = () => {
         <>
             <h1>You Suck</h1>
             <div>
-                <Profile />
+                <Profile name="Rhea Ripley" />
             </div>
         </>
     )
 }
+
 export default About;

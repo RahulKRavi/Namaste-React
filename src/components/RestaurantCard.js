@@ -1,4 +1,4 @@
-import { IMG_CDN_URL } from "../Config";
+import { IMG_CDN_URL } from "../utils/Config";
 
 const RestaurantCard = ({name,cuisines,avgRatingString,cloudinaryImageId}) => {
     return (
