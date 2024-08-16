@@ -33,9 +33,9 @@ const Body = () => {
     }
     return filterdRestaurants.length===0 ? (<Shimmer />):(
         <>
-            <div className="searchContainer">
+            <div className="flex justify justify-center">
                 <input type="text" 
-                        className="search-input" 
+                        className="border border-spacing-3 border-cyan-500" 
                         value={searchText} 
                         onChange={(e) => { setSearchText(e.target.value) }}>
                 </input>
@@ -45,7 +45,7 @@ const Body = () => {
                 }}>Search</button>
             </div>
 
-            <div className="body">
+            <div className="flex flex-wrap bg-yellow-200 m-4">
                 {filterdRestaurants.map((restaurant) => {
                     return (
                         <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id}>
