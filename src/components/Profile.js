@@ -28,13 +28,11 @@ class Profile extends React.Component {
     }
     render() {
         const {name,img} = this.state.userInfo
-        console.log(name);
         return (
-            <>
-                <i>{this.props.name}</i>
+            <div className="profile-box">
                 <b>{name}</b>
                 <img src={this.state.userInfo.avatar_url}></img>
-            </>
+            </div>
         )
 
     }
