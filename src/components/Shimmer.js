@@ -9,7 +9,7 @@ const Shimmer = () => {
                 </ul>
             </div>
 
-            <div className="body">
+            <div className="bg-slate-500">
                 <div className="card">
                     <img className="card-img"></img>
                     <div className="container">

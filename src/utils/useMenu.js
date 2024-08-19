@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import { MENU_CDN_URL } from "../utils/Config";
+import { MENU_CDN_URL } from "./constants";
 
 const useMenu = (resId) => {
-    const [ resMenu, setResMenu ] = useState({})
+    const [ menu, setMenu ] = useState([])
 
     useEffect(() =>{
         getMenuData()
-    })
+    },[])
 
     async function getMenuData(){
-        const fetchData = await fetch(MENU_CDN_URL+resId)
+        const fetchData = await fetch(MENU_CDN_URL+resId);
         const jsonData = await fetchData.json();
-        setResMenu(jsonData?.data?.cards[2]?.card?.card?.info)
+        setMenu(jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
     }
-
-    return resMenu
+    
+    return menu
 
 }
 
