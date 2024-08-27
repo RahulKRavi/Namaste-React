@@ -7,8 +7,6 @@ import { LIST_CDN_URL } from "../utils/constants";
 import useOnline from "../utils/useOnline";
 
 
-
-
 const Body = () => {
 
     const [allRestaurants, setAllRestaurants] = useState([])
@@ -20,7 +18,7 @@ const Body = () => {
     },[])
     
     async function getFetchData(){
-        const fetchedData = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.91850&lng=76.25580&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const fetchedData = await fetch(LIST_CDN_URL);
         const jsonData = await fetchedData.json()
         setAllRestaurants(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredRestaurants(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -30,26 +28,37 @@ const Body = () => {
     if(!isOnline){
         return <h4>Your wifi sucks</h4>
     }
+    
     return filterdRestaurants.length===0 ? (<Shimmer />):(
         <>
-            <div className="flex justify justify-center">
-                <input type="text" 
-                        className="border border-spacing-3 border-cyan-500" 
-                        value={searchText} 
+            <div className="flex justify-around">
+                <div >
+                    <h1 className="font-black text-5xl">TOP RESTAURANTS</h1>
+                </div>
+                <div className="basis-1/12">
+                    <input className="border border-spacing-3 border-cyan-500"
+                        type="text"
+                        value={searchText}
                         onChange={(e) => { setSearchText(e.target.value) }}>
-                </input>
-                <button onClick={() => {
-                    const data = filterData(searchText, allRestaurants);
-                    setFilteredRestaurants(data)
-                }}>Search</button>
-            </div>
+                    </input>
+                    <button className=""
+                        onClick={() => {
+                            const data = filterData(searchText, allRestaurants);
+                            setFilteredRestaurants(data)
+                        }}>Search</button>
 
-            <div className="flex flex-wrap bg-yellow-200 m-4">
+                </div>
+
+
+            </div>
+            <div className="flex flex-wrap m-4">
                 {filterdRestaurants.map((restaurant) => {
                     return (
-                        <Link to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id}>
-                            <RestaurantCard {...restaurant.info} />
-                        </Link>
+                        <div className="m-5 p-5 justify-around w-1/6 h-80 bg-slate-300 rounded-md hover:outline outline-offset-4">
+                            <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
+                                <RestaurantCard {...restaurant.info} />
+                            </Link>
+                        </div>
                     )
                 })}
             </div>

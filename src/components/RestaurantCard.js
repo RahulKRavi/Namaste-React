@@ -2,14 +2,14 @@ import { IMG_CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({name,cuisines,avgRatingString,cloudinaryImageId}) => {
     return (
-        <div className="bg-white m-2 p-3 w-96">
-            <img className="h-14" src={IMG_CDN_URL+cloudinaryImageId} alt="Avatar"></img>
-            <div className="container">
-                <h4><b>{name}</b></h4>
-                <p>{cuisines.join(",")}</p>
-                <p>{avgRatingString +" Stars"}</p>
+        <>
+            <div classname="">
+                <img className="m-auto h-44" src={IMG_CDN_URL + cloudinaryImageId} alt="Avatar"></img>
+                <p className="text-center font-black text-blue-600">{name}</p>
+                <p className="break-normal text-xs">{cuisines.join(", ")}</p>
+                <p className="text-center">{avgRatingString + " Stars"}</p>
             </div>
-        </div>
+        </>
     );
 }
 

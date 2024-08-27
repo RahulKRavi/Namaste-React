@@ -12,10 +12,13 @@ const RestaurantMenu = () => {
 
     return (
         <>
-            <div className="flex justify-around justify-items-center flex-wrap">
+            <div className="flex flex-wrap">
                 {menu.map((item) => {
                     return (
-                        <MenuCard key={item.card.info.id} item={item.card.info} />
+                        <div className="m-5 p-5 justify-around w-2/5 h-52 bg-slate-300 rounded-md">
+                            <MenuCard key={item.card.info.id} item={item.card.info} />
+                        </div>
+                        
                     )
                 })}
             </div>

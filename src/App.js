@@ -16,11 +16,11 @@ import store from './utils/store';
 
 const AppLayout = () => {
     return (
-            <Provider store={store}>
-                <Header />
-                <Outlet />
-                <Footer />
-            </Provider>
+        <Provider store={store}>
+            <Header />
+            <Outlet />
+            <Footer />
+        </Provider>
     )
 }
 
@@ -48,7 +48,10 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/dining",
-                element: <Suspense fallback={<h2>Loading...............</h2>}><Dining/></Suspense>
+                element: 
+                    <Suspense fallback={<h2>Loading...............</h2>}>
+                        <Dining/>
+                    </Suspense>
             },
             {
                 path: "/restaurant/:resId",
