@@ -14,6 +14,7 @@ const useMenu = (resId) => {
         setMenu(jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
     }
     
+    console.log(menu)
     return menu
 
 }

@@ -8,16 +8,24 @@ const Shimmer = () => {
                     <li className="navbar-items"></li>
                 </ul>
             </div>
-
-            <div className="bg-slate-500">
-                <div className="card">
-                    <img className="card-img"></img>
-                    <div className="container">
-                        <h4><b></b></h4>
-                        <p></p>
-                        <p></p>
-                    </div>
+            <div className="flex">
+                <div className="w-1/3">
                 </div>
+                <div className="w-1/3">
+                    <h1 className="font-extrabold text-slate-500 text-4xl">TOP RESTAURANTS</h1>
+                </div>
+                <div className="self-center">
+                </div>
+            </div>
+            <div className="grid grid-cols-4 justify-around">
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
+                <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4"></div>
             </div>
         </>
 

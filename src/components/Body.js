@@ -31,11 +31,13 @@ const Body = () => {
     
     return filterdRestaurants.length===0 ? (<Shimmer />):(
         <>
-            <div className="flex justify-around">
-                <div >
-                    <h1 className="font-black text-5xl">TOP RESTAURANTS</h1>
+            <div className="flex">
+                <div className="w-1/3">
                 </div>
-                <div className="basis-1/12">
+                <div className="w-1/3">
+                    <h1 className="font-extrabold text-slate-500 text-4xl">TOP RESTAURANTS</h1>
+                </div>
+                <div className="self-center">
                     <input className="border border-spacing-3 border-cyan-500"
                         type="text"
                         value={searchText}
@@ -51,11 +53,11 @@ const Body = () => {
 
 
             </div>
-            <div className="flex flex-wrap m-4">
+            <div className="grid grid-cols-4 justify-around">
                 {filterdRestaurants.map((restaurant) => {
                     return (
-                        <div className="m-5 p-5 justify-around w-1/6 h-80 bg-slate-300 rounded-md hover:outline outline-offset-4">
-                            <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
+                        <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4" key={restaurant.info.id}>
+                            <Link to={"/restaurant/" + restaurant.info.id} >
                                 <RestaurantCard {...restaurant.info} />
                             </Link>
                         </div>
