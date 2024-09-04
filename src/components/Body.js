@@ -56,7 +56,7 @@ const Body = () => {
             <div className="grid grid-cols-4 justify-around">
                 {filterdRestaurants.map((restaurant) => {
                     return (
-                        <div className="h-72 m-5 p-5 bg-slate-300 rounded-md hover:outline outline-offset-4" key={restaurant.info.id}>
+                        <div className="h-72 m-5 p-5 bg-slate-400 rounded-md hover:outline outline-offset-4" key={restaurant.info.id}>
                             <Link to={"/restaurant/" + restaurant.info.id} >
                                 <RestaurantCard {...restaurant.info} />
                             </Link>
